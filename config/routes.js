@@ -12,5 +12,10 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/consumption.html',
             controller: 'consumptionController'
         })
+        .state('zelt', {
+            url: '/zelt',
+            templateUrl: 'views/zeltCard.html',
+            controller: 'zeltController'
+        })
 
 });

@@ -6,7 +6,7 @@
   "gcm_sender_id": "",
 	"gcm_user_visible_only": true,
   "background_color": "#fff",
-  "description": "A simply readable Hacker News app.",
+  "description": "O melhor aplicativo de baladas",
   "icons": [{
     "src": "images/touch/homescreen48.png",
     "sizes": "48x48",
