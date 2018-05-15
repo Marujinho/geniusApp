@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GeniusParty App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <!--JQUERY-->    
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <!--MARERIALIZE-->
+    <script src="js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/materialize.css">
+
+    <!--ANGULAR-->
+    <script src="js/angular.js"></script>
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+
+
+
+</head>
+<body ng-app="geniusApp">
+
+    <ul id="slide-out" class="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="images/black.jpg">
+                </div>
+                <img class="circle" src="images/atomo.jpg">
+                <a href="#name"><span class="white-text name">Juliette Campos</span></a>
+            </div>
+        </li>
+        <li><a href="timeline.html">Ver Consumo</a></li>
+        <li class="pulse"><a href="index.html">Meus convites</a></li>
+        <li><a href="#!">Comprar ingresso</a></li>
+        <li><div class="divider"></div></li>
+        <li><a href="#">Sair</a></li>
+    </ul>
+
+<div class="col s12 m3">
+    <div class="card">
+        <div class="card-image">
+            <img src="images/zelt.jpg">
+        </div>
+        <div class="card-content center-align">
+            
+            <b><p>ZELT CLUB </p></b>
+            <b><p>Maio/12 - Sábado</p></b>
+            <hr>
+            <b>O QUE TOCA:</b>
+            <br><br>
+            <li>Funk</li>
+            <li>Eletronica</li>
+            <hr>
+            <b>ENTRADA:</b>
+            <br><br>
+            <li>Homem sem lista: 60,00</li>
+            <li>Homem com lista: 40,00</li>
+            <li>Mulher sem lista: 20,00</li>
+            <li>Mulher com lista : vip até meia noite</li>
+        </div>
+        <div class="card-action center-align">
+            <a href="#"><span style="color: #4db6ac; font-weight: bold; font-size: 20pt;">50%</span></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.sidenav').sidenav();
+    });
+
+</script>
+
+</body>
