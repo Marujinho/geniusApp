@@ -6,13 +6,17 @@
     <title>GeniusParty App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    
+
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="css/materialize.css">
+    <link rel="stylesheet" href="css/timeline.css">
+
     <!--JQUERY-->    
     <script src="js/jquery-3.3.1.min.js"></script>
 
     <!--MARERIALIZE-->
     <script src="js/materialize.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/materialize.css">
+    
 
     <!--ANGULAR-->
     <script src="js/angular.js"></script>
@@ -27,13 +31,13 @@
 
     <!-- CONTROLLERS -->
     <script src="controllers/inviteController.js"></script>
+    <script src="controllers/consumptionController.js"></script>
 
 
 
 </head>
 <body ng-app="geniusApp">
     
-
     <ul id="slide-out" class="sidenav">
         <li>
             <div class="user-view">
@@ -44,15 +48,14 @@
                 <a href="#name"><span class="white-text name">Juliette Campos</span></a>
             </div>
         </li>
-        <li><a href="timeline.html">Ver Consumo</a></li>
+        <li><a ui-sref="consumption">Ver Consumo</a></li>
         <li class="pulse"><a ui-sref="invites">Meus convites</a></li>
         <li><a href="#!">Comprar ingresso</a></li>
         <li><div class="divider"></div></li>
         <li><a href="#">Sair</a></li>
     </ul>
 
-    <div ui-view style="margin-top:10px;"></div>
-
+    <div ui-view></div>
 
     <script>
         $(document).ready(function(){

@@ -1,4 +1,4 @@
-geniusApp.controller('inviteControlller', function($scope, $rootScope, $state) {
+geniusApp.controller('inviteControlller', function($scope, $state, $compile) {
 
     
 });
