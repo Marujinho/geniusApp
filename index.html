@@ -9,7 +9,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/materialize.css">
-    <link rel="stylesheet" href="css/timeline.css">
+    
 
     <!--JQUERY-->    
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -33,11 +33,32 @@
     <script src="controllers/inviteController.js"></script>
     <script src="controllers/consumptionController.js"></script>
 
+    <style>
+    
+    body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
+  main {
+    flex: 1 0 auto;
+  } 
+    
+    </style>
 
 </head>
 <body ng-app="geniusApp">
-    
+    <div class="navbar-fixed">
+        <nav class=" teal lighten-2">
+            <div class="nav-wrapper">
+                <a href="#!" class="right">X</a>
+                <a href="#!" class="brand-logo center">GeniusParty</a>
+                <a href="#!" class="left">PERFIL</a> 
+            </div>
+        </nav>
+    </div>
+
     <ul id="slide-out" class="sidenav">
         <li>
             <div class="user-view">
@@ -55,16 +76,20 @@
         <li><a href="#">Sair</a></li>
     </ul>
 
+    <main></main>
+
     <div ui-view></div>
-    <footer class="page-footer">
-        
-            <div class="row">
-                <div  class="col s4">Ingresso</div>
-                <div class="col s4"><a ui-sref="invites">Meus convites</a></div>
-                <div class="col s4"><a ui-sref="consumption">consumo</a></div>
+    <div class="divider"></div>
+    <footer class="page-footer  transparent">
+        <div class="container">
+            <div class="row" style="color: black">
+                <div class="col s4"><a ui-sref="invites">Convites</a></div>
+                <div class="col s4"><a ui-sref="consumption">Consumo</a></div>
+                <div class="col s4">Comprar</div>
             </div>
-        
-    </footer>
+        </div>
+       
+      </footer>
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
