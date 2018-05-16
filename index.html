@@ -64,17 +64,14 @@
 
     <div ui-view></div>
     
-    <div class="divider"></div>
-    <footer class="page-footer ">
-        <div class="container">
-            <div class="row  teal lighten-2" style="bottom: 0px; position: fixed; width: 100%; height: 30px; color: black" >
-                <div class="col s4"><a ui-sref="invites">Convites</a></div>
-                <div class="col s4"><a ui-sref="consumption">Consumo</a></div>
-                <div class="col s4">Comprar</div>
-            </div>
+    <div class="row  teal lighten-1" style="bottom: 0px; position: fixed; width: 100%; height: 30px;">
+        <div class="col-sm-12" style="text-align:center; position: absolute; margin:5px 0px 0px 15px; height: 25px; background: #FFFFFF;">
+            <div class="col s4"><a ui-sref="invites">Convites</a></div>
+            <div class="col s4"><a ui-sref="consumption">Consumo</a></div>
+            <div class="col s4">Comprar</div>
         </div>
-       
-      </footer>
+    </div>    
+
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
