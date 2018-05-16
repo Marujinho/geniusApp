@@ -47,11 +47,11 @@
   } 
     
     </style>
-    <script>console.log('cacete 2')</script>
+    <script>console.log('cacete 3')</script>
 </head>
 <body ng-app="geniusApp">
     <div class="navbar-fixed">
-        <nav class=" teal lighten-2">
+        <nav class=" blue lighten-2">
             <div class="nav-wrapper">
                 <a href="#!" class="right">X</a>
                 <a href="#!" class="brand-logo center">GeniusParty</a>
@@ -64,19 +64,16 @@
 
     <div ui-view></div>
     
-    <div class="row  teal lighten-1" style="bottom: -20px; position: fixed; width: 100%; height: 50px; text-decoration: none; color: white">
-        
-            <div class="col s4"><a ui-sref="invites">Convites</a></div>
-            <div class="col s4"><a ui-sref="consumption">Consumo</a></div>
-            <div class="col s4">Comprar</div>
-        
+    <div class="row  blue lighten-2" style="bottom: -20px; position: fixed; width: 100%; height: 50px;">
+        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px"><a ui-sref="invites">Convites</a></div>
+        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px"><a ui-sref="consumption">Consumo</a></div>
+        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px">Comprar</div>
     </div>    
 
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
         });
-    
     </script>
 </body>
 </html>
