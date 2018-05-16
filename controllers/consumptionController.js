@@ -1,4 +1,4 @@
-geniusApp.controller('consumptionControlller', function($scope, $state, $compile) {
+geniusApp.controller('consumptionController', function($scope, $state, $compile) {
 
     
 });
