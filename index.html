@@ -43,6 +43,11 @@
     flex-direction: column;
   }
 
+  body a{
+    text-decoration: none; 
+    color: white;
+  }
+
   main {
     flex: 1 0 auto;
   } 
@@ -66,9 +71,9 @@
     <div ui-view></div>
     
     <div class="row  blue lighten-2" style="bottom: -20px; position: fixed; width: 100%; height: 50px;">
-        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px"><a class="center-align" ui-sref="invites">Convites</a></div>
-        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px"><a class="center-align" ui-sref="consumption">Consumo</a></div>
-        <div class="col s4" style="text-decoration: none; color: white; margin-top: 15px"><span class="center-align">Comprar</span></div>
+        <div class="col s4" style=" margin-top: 15px"><a class="center-align" ui-sref="invites">Convites</a></div>
+        <div class="col s4" style=" margin-top: 15px"><a class="center-align" ui-sref="consumption">Consumo</a></div>
+        <div class="col s4" style="margin-top: 15px"><span class="center-align">Comprar</span></div>
     </div>    
 
     <script>
