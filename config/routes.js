@@ -17,5 +17,15 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/zeltCard.html',
             controller: 'zeltController'
         })
+        .state('profile', {
+            url: '/profile',
+            templateUrl: 'views/profile.html',
+            controller: 'profileController'
+        })
+        .state('buy', {
+            url: '/buy',
+            templateUrl: 'views/buy.html',
+            controller: 'buyController'
+        })
 
 });
