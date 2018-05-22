@@ -5,7 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>GeniusParty App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
     
+    <title>GeniusParty App</title>
+
+    <!--ANGULAR-->
+    <script src="js/angular.js"></script>
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/ngMask.js"></script>
+
 
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="css/materialize.css">
@@ -17,14 +28,8 @@
     <!--MARERIALIZE-->
     <script src="js/materialize.min.js"></script>
     
-
-    <!--ANGULAR-->
-    <script src="js/angular.js"></script>
-    <script src="main.js"></script>
-    <script src="app.js"></script>
-
-    <script src="js/angular-ui-router.js"></script>
-    <script src="js/ngMask.js"></script>
+    <link rel="manifest" href="manifest.json">
+    
 
     <!--ROTAS-->    
     <script src="config/routes.js"></script>
@@ -33,6 +38,8 @@
     <script src="controllers/inviteController.js"></script>
     <script src="controllers/consumptionController.js"></script>
     <script src="controllers/zeltController.js"></script>
+    <script src="controllers/buyController.js"></script>
+    <script src="controllers/profileController.js"></script>
 
 
     <style>
@@ -55,7 +62,7 @@
     <script>console.log('anitta ')</script>
 </head>
 <body ng-app="geniusApp">
-    <div class="navbar-fixed">
+    <div class="navbar-fixed" style="margin-bottom: 5px">
         <nav class=" blue lighten-2">
             <div class="nav-wrapper">
                 <div class="row">
@@ -73,10 +80,7 @@
         </nav>
     </div>
     
-
-  
-
-    <div ui-view></div>
+    <div ui-view style="padding-bottom: 25px;"></div>
     
     <div class="row  blue lighten-2" style="bottom: -20px; position: fixed; width: 100%; height: 50px; ">
         <div class="col s4" style=" margin-top: 15px; text-align: center;">
@@ -92,6 +96,16 @@
 
     <script>
       
+
+        if('serviceWorker' in navigator) {
+				navigator
+					.serviceWorker
+					.register('service-worker.js')
+					.then(function(registration) {
+						console.log('Service Worker Registered');
+					});
+            }
+
 
         $('#atom').on('click', function(){
             $('.sidenav').sidenav();

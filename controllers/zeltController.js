@@ -1,4 +1,4 @@
-geniusApp.controller('zeltControlller', function($scope, $state, $compile) {
+geniusApp.controller('zeltController', function($scope, $state, $compile) {
 
     
 });
