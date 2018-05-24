@@ -27,6 +27,11 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/buy.html',
             controller: 'buyController'
         })
+        .state('show', {
+            url: '/show',
+            templateUrl: 'views/show.html',
+            controller: 'showController'
+        })
         
 
 });
