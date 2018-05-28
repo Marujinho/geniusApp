@@ -1,4 +1,4 @@
-var cacheName = 'geniusApp-4';
+var cacheName = 'geniusApp-5';
 var filesToCache = [
 	
     './'
