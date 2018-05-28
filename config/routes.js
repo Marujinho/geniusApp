@@ -32,6 +32,11 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/show.html',
             controller: 'showController'
         })
+        .state('register', {
+            url: '/register',
+            templateUrl: 'views/register.html',
+            controller: 'registerController'
+        })
         
 
 });
