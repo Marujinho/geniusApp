@@ -1,10 +1,24 @@
-geniusApp.controller('registerController', function($scope, $state, $compile) {
-
+geniusApp.controller('registerController', function($scope, $state, $compile, $timeout, $stateParams, registerAPI, $http) {
+    
    
-    $('.registerButton').keyup(function(){
-        if($(this).val().length==$(this).attr("maxlength")){
-            $(this).next().focus();
-        }
-    });       
+    $scope.teste = '';
+    $scope.patronCode = {};
+    
+    if($scope.patronCode) {
+    
+
+    $scope.getPatron = function(patronCode){    
+        //TRAS PATRON DA TABELA
+        registerAPI.findPatron().then(function(data, status){
+
+            $scope.resultado = data;
+            
+            
+        });
+    }
+}   
 
 });
+
+
+ 
