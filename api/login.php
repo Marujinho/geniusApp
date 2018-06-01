@@ -1,11 +1,11 @@
 <?php
 
-
+$result = '5';   
 
 /**/ 
 if(isset($_POST['getPatronFromDatabase'])) {
 
-    $result = '5';    
+    
     $patronCode = $_POST['patronCode'];
 
     if($patronCode == '1111'){
@@ -16,7 +16,7 @@ if(isset($_POST['getPatronFromDatabase'])) {
     echo json_encode($result);
 
 }else{
-    echo json_encode();
+    echo json_encode($result);
 }
 
 ?>
