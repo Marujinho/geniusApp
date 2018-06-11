@@ -1,25 +1,19 @@
 <div class="container">
-    <div class="col s12 m3">
-        <div class="center">
-            <h2>Insira o código</h2>
-            {{resultado}}
-        </div>
+    <div class="col s12 m3" style="margin-top: 130px">
         <form name="patronCode">
             <div class="row">
-                    <div class="form-group">
-                        <div class="form-control col s12">   
-                            <input type="text" class="registerButton" id="code" ng-model="code" maxlength="4" style="font-size: 24pt; text-align: center;" />
-                        </div>
-                    </div>
-                
+                <div class="input-field col s12">   
+                    <input type="text" class="registerButton" id="code" ng-model="code" maxlength="4" style="font-size: 35pt; padding:2px; text-align: center; color: #03a9f4  " />
+                    <label for="code" style="color:#03a9f4 ">Insira seu código aqui...</label>
+                </div>
             </div>
             <div class="row">
-                <div style="background-color: green; height: 50px;" class="center">
+                <div style=" height: 50px; background-color: #4caf50 " class="center">
                     <a href='#' ng-click="getPatron()" style="font-size: 22pt; color: white">ENVIAR</a>
                 </div>
             </div>
         </form>
-        
+
     </div>
 </div>
 

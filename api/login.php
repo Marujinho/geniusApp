@@ -1,22 +1,39 @@
 <?php
+require_once('../config/connect.php');
 
-$result = '5';   
-
-/**/ 
-if(isset($_POST['getPatronFromDatabase'])) {
+//ENCONTRA QUAL PATRON ESTA ACESSANDO O APP
+if(isset($_POST['findPatron'])) {
 
     
     $patronCode = $_POST['patronCode'];
 
-    if($patronCode == '1111'){
-        $result = '10';
-
-    }
+    //TRÁS O USUARIO REFERENTE CODIGO GERADO PELO SISTEMA   
+    $rs = $conn->query("SELECT * FROM user WHERE codigo = $patronCode");
     
-    echo json_encode($result);
+        while($row = $rs->fetch(PDO::FETCH_OBJ)){
+        
+            $result = (array) $row;
+        }             
 
-}else{
-    echo json_encode($result);
+    // VERIFICA SE NAO VEIO NADA DO BANCO
+    if($result===NULL){
+        $result = [];
+        $result['nome'] = "banana";
+    }
+           
+    echo json_encode($result); 
 }
+
+//GRAVA A SENHA DO CARA NO BANCO
+if(isset($_POST['setPassword'])) {
+
+    $pass = $_POST['password'];
+    $rs = $conn->query("UPDATE user SET senha = '".$pass."' WHERE codigo = '1234'");
+
+}
+
+
+
+
 
 ?>

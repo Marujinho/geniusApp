@@ -37,11 +37,10 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/register.html',
             controller: 'registerController'
         })
-        .state('password', {
-            url: '/password',
+        .state('newPassword', {
+            url: '/newPassword',
             templateUrl: 'views/password.html',
             controller: 'registerController'
         })
-        
 
 });
