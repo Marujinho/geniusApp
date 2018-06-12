@@ -1,6 +1,6 @@
 geniusApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/register');
 
     $stateProvider.state('invites', {
             url: '/invites',
@@ -40,6 +40,11 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
         .state('newPassword', {
             url: '/newPassword',
             templateUrl: 'views/password.html',
+            controller: 'registerController'
+        })
+        .state('welcome', {
+            url: '/welcome',
+            templateUrl: 'views/welcome.html',
             controller: 'registerController'
         })
 

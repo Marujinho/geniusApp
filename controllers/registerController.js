@@ -1,6 +1,11 @@
 geniusApp.controller('registerController', function($scope, $rootScope, $state, $compile, $timeout, $stateParams, registerAPI, $http) {
     
-    
+
+    if((localStorage.getItem('patronId') == "" || localStorage.getItem('patronId') == null)&&(localStorage.getItem('firstAccess') == 1) ){
+        $state.go('welcome');
+    }
+
+
     $scope.patronCode = {};
     $scope.password = {};
 
