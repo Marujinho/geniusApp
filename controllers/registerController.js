@@ -1,9 +1,9 @@
 geniusApp.controller('registerController', function($scope, $rootScope, $state, $compile, $timeout, $stateParams, registerAPI, $http) {
     
 
-    if((localStorage.getItem('patronId') == "" || localStorage.getItem('patronId') == null)&&(localStorage.getItem('firstAccess') == 1) ){
-        $state.go('welcome');
-    }
+    // if((localStorage.getItem('patronId') == "" || localStorage.getItem('patronId') == null)&&(localStorage.getItem('firstAccess') == 1) ){
+    //     $state.go('welcome');
+    // }
 
 
     $scope.patronCode = {};
@@ -11,19 +11,19 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
 
     //ENCONTRA O PATRON 
     if($scope.patronCode) {
-        $scope.getPatron = function(patronCode){    
+        $scope.getPatron = function(){    
             //TRAS PATRON DA TABELA
-            registerAPI.findPatron($scope.code).then(function(data, status){
+            registerAPI.findPatron().then(function(data, status){
 
-               
-                localStorage.setItem('patronId', JSON.stringify(data.data.id));
-                localStorage.setItem('patronName', JSON.stringify(data.data.nome));
-                localStorage.setItem('patronAge', JSON.stringify(data.data.idade));
+               console.log(data);
+                // localStorage.setItem('patronId', JSON.stringify(data.data.id));
+                // localStorage.setItem('patronName', JSON.stringify(data.data.nome));
+                // localStorage.setItem('patronAge', JSON.stringify(data.data.idade));
             
-                 //GRAVA OS DADOS DO PATRON NO ROOT
-                $rootScope.patronData.id = localStorage.getItem('patronId');
-                $rootScope.patronData.name = localStorage.getItem('patronName');
-                $rootScope.patronData.age = localStorage.getItem('patronAge');
+                //  //GRAVA OS DADOS DO PATRON NO ROOT
+                // $rootScope.patronData.id = localStorage.getItem('patronId');
+                // $rootScope.patronData.name = localStorage.getItem('patronName');
+                // $rootScope.patronData.age = localStorage.getItem('patronAge');
 
                 $state.go('newPassword');
                        

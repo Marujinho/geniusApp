@@ -1,12 +1,12 @@
 geniusApp.factory('registerAPI', function($http) {
 
-        let _findPatron = function(patronCode) {
-            console.log(patronCode);
+        let _findPatron = function() {
+            // console.log(patronCode);
             return $http({
-                method  : 'POST',
-                url     : 'api/login.php',
-                data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
-                headers : {'Content-Type' :'application/x-www-form-urlencoded'},
+                method  : 'GET',
+                url     : 'http://34.220.228.34/patrons/2',
+                // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
+                // headers : {'Content-Type' :'application/x-www-form-urlencoded'},
                 async   : false   
                         
             });

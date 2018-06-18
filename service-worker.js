@@ -1,4 +1,4 @@
-let cacheName = 'geniusPartyApp_v3';
+let cacheName = 'geniusPartyApp_v1.1';
 let filesToCache = [
 	// HTML
 	'./',
