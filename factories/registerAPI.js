@@ -4,11 +4,10 @@ geniusApp.factory('registerAPI', function($http) {
             // console.log(patronCode);
             return $http({
                 method  : 'GET',
-                url     : 'http://34.220.228.34/patrons/2',
+                url     : 'https://geniusparty.com.br/patrons/2',
                 // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
-                // headers : {'Content-Type' :'application/x-www-form-urlencoded'},
-                async   : false   
-                        
+                 headers : {'Content-Type' :'application/x-www-form-urlencoded'},
+                async   : false          
             });
         };
 
