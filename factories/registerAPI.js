@@ -11,16 +11,28 @@ geniusApp.factory('registerAPI', function($http) {
             });
         };
 
-        let _setPassword = function(password) {
+        let _setPassword = function(patronData) {
+           
+           
             return $http({
-                method  : 'PUT',
-                url     : 'https://geniusparty.com.br/api/patrons/' + password,
-                //data    : $.param({setPassword: 'setPassword', password: password  }),
+                method  : 'GET',
+                url     : 'https://geniusparty.com.br/api/patrons/pass/' + patronData.pId + '/' + patronData.pPass,
+                // data    : $.param({code: '1', pass: '11111'  }),
                 headers : {'Content-Type' :'application/x-www-form-urlencoded'},
                 async   : false   
                         
             });
         };
+
+        // let _saveUser = function(user) {
+        //     user.login = $rootScope.global.idUser;
+        //     user.password = $rootScope.global.password;
+        //     return $http({
+        //         method: 'POST',
+        //         url: $rootScope.global.link + '/user/save',
+        //         data: user
+        //     });
+        // };
 
     return{
 

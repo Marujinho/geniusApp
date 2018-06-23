@@ -50,7 +50,7 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
         .state('giphy', {
             url: '/giphy',
             templateUrl: 'views/giphy.html',
-            controller: 'registerController'
+            controller: 'giphyController'
         })
 
 });

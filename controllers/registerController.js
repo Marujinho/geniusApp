@@ -1,25 +1,22 @@
 geniusApp.controller('registerController', function($scope, $rootScope, $state, $compile, $timeout, $stateParams, registerAPI, $http) {
     
 
-    // if((localStorage.getItem('patronId') == "" || localStorage.getItem('patronId') == null)&&(localStorage.getItem('firstAccess') == 1) ){
-    //     $state.go('welcome');
-    // }
-
-
     $scope.patronCode = {};
-    $scope.password = {};
+    $scope.password = {};   
+    $scope.patronData = {};
+   
 
     //ENCONTRA O PATRON 
     if($scope.patronCode) {
         $scope.getPatron = function(code){    
             //TRAS PATRON DA TABELA
             registerAPI.findPatron($scope.code).then(function(data, status){
-
-               console.log(data.data);
+                
+                $rootScope.thePatron = {};
+               console.log(data.data.patron.name);
             
-                $scope.patronId = data.data.patron.id;
-                $scope.patronName = data.data.patron.name;
-                $scope.patronAge = data.data.patron.born_at;
+                localStorage.setItem('patronId', data.data.patron.id); 
+                $rootScope.thePatron.name = data.data.patron.name;
 
                 $state.go('newPassword');
                        
@@ -29,15 +26,27 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
     
     //GRAVA SENHA NO BANCO
     if($scope.password){    
-        $scope.setNewPassword = function(password){    
+        $scope.setNewPassword = function(pass){
+            
+            $scope.patronData.pId = localStorage.getItem('patronId');
+            $scope.patronData.pPass = $scope.pass;
+
+            console.log($scope.patronData);
             //TRAS PATRON DA TABELA
-            registerAPI.setPassword($scope.pass).then(function(data, status){
+            registerAPI.setPassword($scope.patronData).then(function(data, status){
 
                 $scope.passwordResult = data;
-               
-                localStorage.setItem('patronId', JSON.stringify($scope.patronId));
-                localStorage.setItem('patronName', JSON.stringify($scope.patronName));
-                localStorage.setItem('patronAge', JSON.stringify($scope.patronAge));
+                console.log('id '+data.data.id);
+
+                localStorage.setItem('patronId', data.data.id);
+                localStorage.setItem('patronName', data.data.name);
+                localStorage.setItem('patronAge', data.data.born_at);
+
+                $rootScope.thePatron.id = localStorage.getItem('patronId');
+                $rootScope.thePatron.name = localStorage.getItem('patronName');
+                $rootScope.thePatron.age = localStorage.getItem('patronAge');
+
+                $state.go('giphy');
                 
             });
         }
