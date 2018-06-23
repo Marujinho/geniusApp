@@ -1,10 +1,10 @@
 geniusApp.factory('registerAPI', function($http) {
 
-        let _findPatron = function() {
+        let _findPatron = function(code) {
             // console.log(patronCode);
             return $http({
                 method  : 'GET',
-                url     : 'https://geniusparty.com.br/api/patrons/1234',
+                url     : 'https://geniusparty.com.br/api/patrons/' + code,
                 // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
                 headers :  {'Content-Type' :'application/x-www-form-urlencoded'},
                 async   : false          
@@ -12,11 +12,10 @@ geniusApp.factory('registerAPI', function($http) {
         };
 
         let _setPassword = function(password) {
-            console.log(password);
             return $http({
-                method  : 'POST',
-                url     : 'api/login.php',
-                data    : $.param({setPassword: 'setPassword', password: password  }),
+                method  : 'PUT',
+                url     : 'https://geniusparty.com.br/api/patrons/' + password,
+                //data    : $.param({setPassword: 'setPassword', password: password  }),
                 headers : {'Content-Type' :'application/x-www-form-urlencoded'},
                 async   : false   
                         
