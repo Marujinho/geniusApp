@@ -6,7 +6,7 @@ geniusApp.factory('registerAPI', function($http) {
                 method  : 'GET',
                 url     : 'https://geniusparty.com.br/api/patrons/1234',
                 // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
-                headers : {'Access//-Control-Allow-Origin': '*'},
+                headers : {'Access-Control-Allow-Origin': '*'},
                 async   : false          
             });
         };
