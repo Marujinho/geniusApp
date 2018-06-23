@@ -4,9 +4,9 @@ geniusApp.factory('registerAPI', function($http) {
             // console.log(patronCode);
             return $http({
                 method  : 'GET',
-                url     : 'https://geniusparty.com.br/patrons/2',
+                url     : 'https://geniusparty.com.br/api/patrons/1',
                 // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
-                 headers : {'Content-Type' :'application/x-www-form-urlencoded'},
+                headers : {'Content-Type' :'application/x-www-form-urlencoded'},
                 async   : false          
             });
         };
