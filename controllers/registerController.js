@@ -15,7 +15,7 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
             //TRAS PATRON DA TABELA
             registerAPI.findPatron().then(function(data, status){
 
-               console.log(data);
+               console.log(data.data);
                 // localStorage.setItem('patronId', JSON.stringify(data.data.id));
                 // localStorage.setItem('patronName', JSON.stringify(data.data.nome));
                 // localStorage.setItem('patronAge', JSON.stringify(data.data.idade));
