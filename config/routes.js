@@ -1,6 +1,6 @@
 geniusApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/register');
+    $urlRouterProvider.otherwise('/notLogged');
 
     $stateProvider.state('invites', {
             url: '/invites',
@@ -51,6 +51,11 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/giphy',
             templateUrl: 'views/giphy.html',
             controller: 'giphyController'
+        })
+        .state('notLogged', {
+            url: '/notLogged',
+            templateUrl: 'views/notLogged.html',
+            controller: 'notLoggedController'
         })
 
 });
