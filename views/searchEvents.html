@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card green lighten-3" style="height: 50px">
+            <div class="card-content white-text">
+                <span class="card-title center" style="font-size: 15pt; position: relative;">EVENTOS DISPONÍVEIS</span>
+            </div>
+        </div>
+    </div>    
+</div>
+<div class="row">
+  <div class="col s12 m6">
+      
+    <div ng-repeat="event in events" class="card" style="background-image: url('images/funk.jpg'); ">
+        <a ui-sref="buy({eventId: '{{event.id}}' })">
+        <div class="card-content black-text">
+          <span class="card-title" style="font-weight: bold;">{{event.name}}</span>
+          <p style="font-weight: bold; font-size: 9pt; margin-bottom: 8px; margin-top: -8px;">Zelt Club - Jundiai/SP</p>
+          <p style="font-weight: bold; font-size: 9pt">Inicio: {{event.starts_at}}</p>
+          <p style="font-weight: bold; font-size: 9pt; margin-top: -5px">Termina: {{event.finishes_at}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+ 

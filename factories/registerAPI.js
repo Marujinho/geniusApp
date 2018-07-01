@@ -24,6 +24,19 @@ geniusApp.factory('registerAPI', function($http) {
             });
         };
 
+        let _login = function(patronData) {
+           
+           
+            return $http({
+                method  : 'GET',
+                url     : 'https://geniusparty.com.br/api/patrons/show/' + patronData.patronEmail + '/' + patronData.patronPass,
+                // data    : $.param({code: '1', pass: '11111'  }),
+                headers : {'Content-Type' :'application/x-www-form-urlencoded'},
+                async   : false   
+                        
+            });
+        };
+
         // let _saveUser = function(user) {
         //     user.login = $rootScope.global.idUser;
         //     user.password = $rootScope.global.password;
@@ -37,7 +50,8 @@ geniusApp.factory('registerAPI', function($http) {
     return{
 
         findPatron    : _findPatron,
-        setPassword   : _setPassword
+        setPassword   : _setPassword,
+        login         : _login
     };
 
     

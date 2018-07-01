@@ -28,6 +28,7 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
     if($scope.password){    
         $scope.setNewPassword = function(pass){
             
+            console.log('o pass se refere à ' + pass);
             $scope.patronData.pId = localStorage.getItem('patronId');
             $scope.patronData.pPass = $scope.pass;
 

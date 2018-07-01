@@ -1,6 +1,6 @@
 geniusApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/notLogged');
+    $urlRouterProvider.otherwise('/giphy');
 
     $stateProvider.state('invites', {
             url: '/invites',
@@ -22,8 +22,8 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/profile.html',
             controller: 'profileController'
         })
-        .state('buy', {
-            url: '/buy',
+        $stateProvider.state('buy', {
+            url: '/buy/:eventId',
             templateUrl: 'views/buy.html',
             controller: 'buyController'
         })
@@ -56,6 +56,21 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/notLogged',
             templateUrl: 'views/notLogged.html',
             controller: 'notLoggedController'
+        })
+        .state('searchEvents', {
+            url: '/searchEvents',
+            templateUrl: 'views/searchEvents.html',
+            controller: 'searchEventsController'
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: 'views/login.html',
+            controller: 'loginController'
+        })
+        .state('newCardPurchase', {
+            url: '/newCardPurchase/:evtId',
+            templateUrl: 'views/newCardPurchase.html',
+            controller: 'newCardPurchaseController'
         })
 
 });

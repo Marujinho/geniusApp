@@ -4,9 +4,11 @@
             <img src="images/zelt.jpg">
         </div>
         <div class="card-content center-align">            
-            <h6>
-                Zelt - 04/04/2018<br>
-                Jundiai/SP<br>
+            
+                <h4><b>{{event.name}}</b></h4>
+                <h6>
+                {{event.starts_at}}<br>
+                Jundiaí<br>
                 Av. Humberto cereser, 267
             </h6>
             <br>
@@ -14,48 +16,39 @@
 
             <b>O que toca:</b>
             <br><br>
-            <div class="chip blue lighten-4">Funk</div>
-            <div class="chip blue lighten-4">Pagode</div>
-            <div class="chip blue lighten-4">Putaria</div>
-            <div class="chip blue lighten-4">Funk</div>
-            <div class="chip blue lighten-4">Pagode</div>
-            <div class="chip blue lighten-4">Putaria</div>
+            <div ng-repeat="tag in event.tags">
+                <div class="chip blue lighten-4">{{tag.name}}</div>
+            </div>
             <hr>
             <b>Ingressos:</b>
             <br><br>
-            <div class="chip blue lighten-4">Homem sem lista: 60,00</div>
-            <div class="chip blue lighten-4">Homem com lista: 40,00</div>
-            <div class="chip pink lighten-4">Mulher sem lista: 20,00</div>
-            <div class="chip pink lighten-4">Mulher com lista : 10,00</div>
+            <div ng-repeat="ticket in event.tickets">
+                <div class="chip blue lighten-4">{{ticket.name}} - {{ticket.description}} -> {{ticket.price}}</div>
+            </div>
         </div>
         <hr>
         <div>
             <div class="center-align">
                 <b>Ingressos sem fila:</b>
             </div>
-            <ul class="collection" >
-                <li class="collection-item avatar light-blue lighten-5" >
-                <i class="material-icons circle">people</i>
-                <p class="title">Pista <br> <span style="font-size: 9pt">35,00 (+ R$ 1,75 taxa)</span></p>
-                <p>
-                    <span style="font-size: 7pt">Preço Sujeito a alterações</span>
-                </p>
-                <a href="#!" class="secondary-content" style="text-align: center"><i class="material-icons btn light-blue" style="font-size: 13pt; width: 85px">QUERO!</i></a>
-                </li>
-                <li class="collection-item avatar light-blue lighten-5" >
-                    <i class="material-icons circle">star</i>
-                    <p class="title">Camarote<br> <span style="font-size: 9pt">70,00 (+ R$ 3,50 taxa)</span></p>
-                    <p><span style="font-size: 7pt">Preço Sujeito a alterações</span></p>
-                    <a href="#!" class="secondary-content"><i class="material-icons btn light-blue" style="font-size: 13pt; width: 85px">QUERO!</i></a>
-                </li>
-                
-            </ul>
+            <form name="ticket">
+                <ul class="collapsible">          
+                    <li ng-repeat="ticket in event.tickets">
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Pista - 12,00</div>
+                        <div class="collapsible-body"><span ui-sref="registeredCardPurchase">Cartão cadastrado</span></div>
+                        <div class="collapsible-body"><span ui-sref="newCardPurchase({evtId: '{{ticket.id }}' })">Novo cartao de credito</span></div>
+                        <div class="collapsible-body"><span ui-sref="boletoPurchase">Boleto</span></div>
+                      </li> 
+                    
+                </ul>
+            </form>
         </div>
+
         <div class="card-content center-align"> 
             <b>Descrição do evento:</b>
             <p class="flow-text" style="font-size: 10pt">Lorem ipsum quisque dictum nec vehicula morbi, massa elementum mi pellentesque etiam augue sollicitudin, curabitur nostra ad egestas consequat. vitae scelerisque dictum lorem sit urna consectetur platea, viverra donec orci varius tristique placerat ut, erat nec habitasse augue primis arcu. nec potenti nostra neque purus nisi integer luctus habitant primis egestas, nostra consequat posuere netus nec luctus fames tincidunt aliquet. vitae sociosqu malesuada torquent aliquam ullamcorper rutrum diam curabitur luctus nibh, ullamcorper eget leo platea morbi orci mauris proin aptent sit venenatis, etiam accumsan gravida sollicitudin vel magna massa amet odio. </p>
         </div>    
     </div>
-    
 </div>
+
     

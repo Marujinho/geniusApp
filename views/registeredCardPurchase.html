@@ -1,0 +1,46 @@
+<div class="col s12 m3" style="margin-top: -12px">
+    <div class="card">
+        <div class="card-image">
+            <img src="images/zelt.jpg">
+        </div>
+        <div class="card-content center-align">            
+            
+                <h4><b>{{event.name}}</b></h4>
+                <h6>
+                {{event.starts_at}}<br>
+                Jundiaí<br>
+                Av. Humberto cereser, 267
+            </h6>
+            <br>
+            <hr>
+
+            <b>Informação de pagamento:</b>
+            <br>
+            <form>
+                <div class="row">
+                    <div class="input-field col s12" id="whichCard">   
+                        <select name="ss" >
+                            <option value="" disabled selected>Selecione o cartao</option>
+                            <option value="2">cartao 2</option>
+                            <option value="3">cartao 3</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">   
+                        <input type="text" class="registerButton" id="code" ng-model="code" maxlength="4" style="font-size: 35pt; padding:2px; text-align: center; color: #03a9f4  " />
+                        <label for="code" style="color:#03a9f4 ">Insira seu código aqui...</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">   
+                        <input type="text" class="registerButton" id="code" ng-model="code" maxlength="4" style="font-size: 35pt; padding:2px; text-align: center; color: #03a9f4  " />
+                        <label for="code" style="color:#03a9f4 ">Insira seu código aqui...</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    

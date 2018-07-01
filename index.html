@@ -32,6 +32,7 @@
     
     <!--FACTORIES-->
     <script src="factories/registerAPI.js"></script>
+    <script src="factories/eventAPI.js"></script>
 
     <!--ROTAS-->    
     <script src="config/routes.js"></script>
@@ -49,6 +50,10 @@
     <script src="controllers/registerController.js"></script>
     <script src="controllers/giphyController.js"></script>
     <script src="controllers/notLogged.js"></script>
+    <script src="controllers/searchEventsController.js"></script>
+    <script src="controllers/loginController.js"></script>
+    <script src="controllers/newCardPurchaseController.js"></script>
+  
 
 
     <!--IOS FRESCURA-->
@@ -113,21 +118,27 @@
             <a ui-sref="giphy" ><img id="atom" width="30" src="images/atom.png" style="margin-top: 13px"></a>
         </div>
         <div class="col s5" style=" margin-top: 15px; text-align: center;">
-            <a ui-sref="buy" style="text-align: center; color: white;">Comprar</a>
+            <a ui-sref="searchEvents" style="text-align: center; color: white;">Comprar</a>
         </div>
     </div>    
 
     <script>
       
 
-        if('serviceWorker' in navigator) {
-				navigator
-					.serviceWorker
-					.register('service-worker.js')
-					.then(function(registration) {
-						console.log('Service Worker Registered');
-					});
-            }
+        // if('serviceWorker' in navigator) {
+		// 		navigator
+		// 			.serviceWorker
+		// 			.register('service-worker.js')
+		// 			.then(function(registration) {
+		// 				console.log('Service Worker Registered');
+		// 			});
+        //     }
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }    
 
 
         $('#atom').on('click', function(){
