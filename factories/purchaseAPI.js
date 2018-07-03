@@ -4,7 +4,7 @@ geniusApp.factory('purchaseAPI', function($http) {
         // console.log(patronCode);
         return $http({
             method  : 'GET',
-            url     : 'https://geniusparty.com.br/api/tickets/'+ ticketData.pId + '/event/' + ticketData.ticketId,
+            url     : 'https://geniusparty.com.br/api/tickets/'+ ticketData.pId + '/patron/' + ticketData.ticketId,
             // data    : $.param({findPatron: 'findPatron', patronCode: patronCode  }),
             headers :  {'Content-Type' :'application/x-www-form-urlencoded'},
             async   : false          
