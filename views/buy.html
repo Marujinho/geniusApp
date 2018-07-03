@@ -33,12 +33,12 @@
             </div>
             <form name="ticket">
                 <ul class="collapsible">          
-                    <li ng-repeat="ticket in event.tickets">
+                    <li>
                         <div class="collapsible-header"><i class="material-icons">filter_drama</i>Pista - 12,00</div>
                         <div class="collapsible-body"><span ui-sref="registeredCardPurchase">Cartão cadastrado</span></div>
                         <div class="collapsible-body"><span ui-sref="newCardPurchase({evtId: '{{ticket.id }}' })">Novo cartao de credito</span></div>
                         <div class="collapsible-body"><span ui-sref="boletoPurchase">Boleto</span></div>
-                      </li> 
+                    </li> 
                     
                 </ul>
             </form>

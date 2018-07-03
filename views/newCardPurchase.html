@@ -17,6 +17,15 @@
             <b>Informação de pagamento:</b>
             <br>
             <form name="ticket">
+                    <div class="input-field col s12">
+                            <select>
+                              <option value="" disabled selected>Selecione o cartão</option>
+                              <option value="1">Master Card</option>
+                              <option value="2">Visa</option>
+                              <option value="3">Amex</option>
+                            </select>
+                      
+                    </div>
                 <div class="row">
                     <div class="input-field col s12">   
                         <input type="text" class="registerButton" id="cardNumber" ng-model="cardNumber" style="font-size: 22pt; padding:2px; text-align: center; color: #03a9f4  " />
@@ -33,11 +42,28 @@
                         <label for="code" style="color:#03a9f4 ">Ano de expiração</label>
                     </div>
                 </div>
+                <hr>
+
+                <b>Informamações do cliente:</b>
+                <div class="row">
+                        <div class="input-field col s12">   
+                            <input type="text" class="registerButton" id="cardNumber" ng-model="cardNumber" style="font-size: 22pt; padding:2px; text-align: center; color: #03a9f4  " />
+                            <label for="code" style="color:#03a9f4 ">Endereço:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">   
+                            <input type="text" class="registerButton" id="monthExpiration" ng-model="monthExpiration" maxlength="2" style="font-size: 22pt; padding:2px; text-align: center; color: #03a9f4  " />
+                            <label for="code" style="color:#03a9f4 ">Cpf</label>
+                        </div>
+                    </div>    
                 <div class="row">
                     <div style=" height: 50px; background-color: #4caf50 " class="center">
                         <a href='#' ng-click="buyTicket()" style="font-size: 22pt; color: white">COMPRAR</a>
                     </div>
                 </div>
+               
+
             </form>
         </div>
     </div>

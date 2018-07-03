@@ -6,6 +6,7 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
     $scope.patronData = {};
    
 
+
     //ENCONTRA O PATRON 
     if($scope.patronCode) {
         $scope.getPatron = function(code){    
@@ -13,7 +14,7 @@ geniusApp.controller('registerController', function($scope, $rootScope, $state, 
             registerAPI.findPatron($scope.code).then(function(data, status){
                 
                 $rootScope.thePatron = {};
-               console.log(data.data.patron.name);
+                console.log(data.data.patron.name);
             
                 localStorage.setItem('patronId', data.data.patron.id); 
                 $rootScope.thePatron.name = data.data.patron.name;
