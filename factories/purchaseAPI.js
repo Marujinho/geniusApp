@@ -14,7 +14,7 @@ geniusApp.factory('purchaseAPI', function($http) {
 
 return{
 
-    buyTicket: _buyTickets
+    buyTicket: _buyTicket
 };
 
 

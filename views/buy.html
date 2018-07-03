@@ -27,23 +27,20 @@
             </div>
         </div>
         <hr>
-        <div>
+        
             <div class="center-align">
                 <b>Ingressos sem fila:</b>
             </div>
             <form name="ticket">
                 <ul class="collapsible">          
-                    <li>
-                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Pista - 12,00</div>
-                        <div class="collapsible-body"><span ui-sref="registeredCardPurchase">Cartão cadastrado</span></div>
+                    <li ng-repeat="ticket in event.tickets" ng-show="ticket.type_of_sale == 'online'">
+                        <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.price}}</div>
+                        <div class="collapsible-body"><span ng-click="buyTicket(ticket.id)">Cartão cadastrado</span></div>
                         <div class="collapsible-body"><span ui-sref="newCardPurchase({evtId: '{{ticket.id }}' })">Novo cartao de credito</span></div>
                         <div class="collapsible-body"><span ui-sref="boletoPurchase">Boleto</span></div>
                     </li> 
-                    
                 </ul>
             </form>
-        </div>
-
         <div class="card-content center-align"> 
             <b>Descrição do evento:</b>
             <p class="flow-text" style="font-size: 10pt">Lorem ipsum quisque dictum nec vehicula morbi, massa elementum mi pellentesque etiam augue sollicitudin, curabitur nostra ad egestas consequat. vitae scelerisque dictum lorem sit urna consectetur platea, viverra donec orci varius tristique placerat ut, erat nec habitasse augue primis arcu. nec potenti nostra neque purus nisi integer luctus habitant primis egestas, nostra consequat posuere netus nec luctus fames tincidunt aliquet. vitae sociosqu malesuada torquent aliquam ullamcorper rutrum diam curabitur luctus nibh, ullamcorper eget leo platea morbi orci mauris proin aptent sit venenatis, etiam accumsan gravida sollicitudin vel magna massa amet odio. </p>

@@ -7,16 +7,16 @@ geniusApp.controller('newCardPurchaseController', function($scope,$stateParams, 
 
     $scope.name = localStorage.getItem('patronName');
 
-    $scope.patronData = {};
+   
 
 
     $('select').formSelect();
 
-
-    $scope.buyTicket = function(twoParams){
+    $scope.patronData = {};
+    $scope.buyTicket = function(oneParam){
         
         $scope.patronData.pId = localStorage.getItem('patronId');
-        $scope.patronData.eventId = $scope.eventId;
+        $scope.patronData.eventId = $scope.ticketId;
 
         purchaseAPI.buyTicket($scope.patronData).then(function(data, status){
 
