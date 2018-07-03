@@ -27,7 +27,7 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
         $scope.ticketData.pId = localStorage.getItem('patronId');
         $scope.ticketData.ticketId = oneParam;
 
-        purchaseAPI.buyTicket($scope.patronData).then(function(data, status){
+        purchaseAPI.buyTicket($scope.ticketData).then(function(data, status){
 
             
         });
