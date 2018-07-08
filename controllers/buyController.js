@@ -29,6 +29,7 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
 
         purchaseAPI.buyTicket($scope.ticketData).then(function(data, status){
 
+            alert('Seu ingresso foi comprado com sucesso! Sua entrada ja está liberada');
             
         });
     }

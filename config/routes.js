@@ -2,10 +2,10 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/giphy');
 
-    $stateProvider.state('invites', {
-            url: '/invites',
-            templateUrl: 'views/invites.html',
-            controller: 'inviteController'
+    $stateProvider.state('gifts', {
+            url: '/gifts',
+            templateUrl: 'views/gifts.html',
+            controller: 'giftsController'
         })
         .state('consumption', {
             url: '/consumption',

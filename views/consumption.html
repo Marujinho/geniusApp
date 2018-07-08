@@ -15,52 +15,32 @@
       </div>
     </div>
     <hr> -->
+    <ul class="collection">
+      <li class="collection-item avatar">
+       
+        <span class="title">{{event.name}}</span>
+        <p>
+            {{event.venue.name}} - <b>- Jundiai/SP</b> <br>
+            {{event.name}} - {{event.starts_at}}<br>
+            <b>Total Gasto: 256,00</b>
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      </li>
+    </ul>
+<!-- 
     <div class="container" style="margin-bottom: 15px">
-      <h6 class="flow-text">Zelt Club - Jundiai/SP</h6>
-      <h6 class="flow-text">Festa do Alok - 05/08/2018</h6>
+      <h6 class="flow-text">{{event.venue.name}} <b>- Jundiai/SP</b></h6>
+      <h6 class="flow-text">{{event.name}} - {{event.starts_at}}</h6>
       <h6 class="flow-text">Total Gasto: 256,00</h6>
-    </div>
-    <hr>
+    </div> -->
+    <!-- <hr> -->
     <!-- TIMELINE -->
-    <div class="row">
+    <div class="row" ng-repeat="tab in tabs.tabs">
       <div class="col s12 m6">
         <div class="card pink lighten-5">
           <div class="card-content black-text">
-            <span class="card-title" style="font-weight: bold;">Caipirinha - 12,00</span>
-            <p style="font-weight: bold">12/12/2018 - 00:21</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card blue lighten-5">
-          <div class="card-content black-text">
-            <span class="card-title" style="font-weight: bold">Agua - 6,00</span>
-            <p style="font-weight: bold">12/12/2018 - 01:21</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card pink lighten-5">
-          <div class="card-content black-text">
-            <span class="card-title" style="font-weight: bold">Combo Smirnoff + 4 Red Bulls - 400,00</span>
-            <p style="font-weight: bold">12/12/2018 - 02:45</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col s12 m6">
-        <div class="card blue lighten-5">
-          <div class="card-content black-text">
-            <span class="card-title" style="font-weight: bold">Agua - 6,00</span>
-            <p style="font-weight: bold">12/12/2018 - 03:55</p>
+            <span class="card-title" style="font-weight: bold;">{{tab.item.name}} - {{tab.price}}</span>
+            <p style="font-weight: bold">{{event.starts_at}}</p>
           </div>
         </div>
       </div>

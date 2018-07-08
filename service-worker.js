@@ -1,8 +1,7 @@
 let cacheName = 'geniusPartyApp_v1.1.6';
 let filesToCache = [
 	// HTML
-	'./',
-	'index.html'
+	'./index.html'
 ];
 
 self.addEventListener('install', function(e) {
@@ -15,10 +14,20 @@ self.addEventListener('install', function(e) {
 	);
 });
 
-self.addEventListener('activate',  event => {
-	event.waitUntil(self.clients.claim());
-	console.log('[ServiceWorker] activated');
+// self.addEventListener('activate',  event => {
+ 	// event.waitUntil(self.clients.claim());
+ 	// console.log('[ServiceWorker] activated');
 
+// });
+
+self.addEventListener('activate', activateEvent => {
+	activateEvent.waitUntil(
+	  caches.keys().then(keyList => Promise.all(keyList.map(key => {
+		if (key !== cacheName) {
+		  return caches.delete(key);
+	}
+		  })))
+	);
 });
 
 self.addEventListener('fetch', event => {
