@@ -15,7 +15,8 @@
       </div>
     </div>
     <hr> -->
-    <ul class="collection">
+    
+    <!-- <ul class="collection">
       <li class="collection-item avatar">
        
         <span class="title">{{event.name}}</span>
@@ -26,7 +27,22 @@
         </p>
         <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
       </li>
-    </ul>
+    </ul> -->
+
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card" style="background-image: url('images/funk.jpg'); ">
+            <a ui-sref="buy({eventId: '{{event.id}}' })">
+            <div class="card-content black-text">
+              <span class="card-title" style="font-weight: bold;">{{event.name}}</span>
+              <p style="font-weight: bold; font-size: 9pt; margin-bottom: 8px; margin-top: -8px;">{{event.venue.name}} - Jundiai/SP</p>
+              <p style="font-weight: bold; font-size: 9pt">Inicio: {{event.starts_at}}</p>
+              <p style="font-weight: bold; font-size: 9pt; margin-top: -5px">Termina: {{event.finishes_at}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
 <!-- 
     <div class="container" style="margin-bottom: 15px">
       <h6 class="flow-text">{{event.venue.name}} <b>- Jundiai/SP</b></h6>
