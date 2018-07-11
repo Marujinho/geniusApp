@@ -61,10 +61,11 @@
         </div>
       </div>
     </div> -->
-
-    <ul ng-repeat="tab in tabs.tabs">
-      <li>{{tab.item.name}} - {{tab.price}}<br> {{event.starts_at}}</li>
-    </ul>
+    <div class="container">
+      <ul ng-repeat="tab in tabs.tabs" style="list-style-type: circle">
+        <li style="font-size: 13pt"> - {{tab.item.name}} - {{tab.price}}<br> {{event.starts_at}}</li>
+      </ul>
+    </div>
 
 
     <div class="row">
