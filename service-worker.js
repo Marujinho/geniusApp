@@ -1,40 +1,49 @@
-let cacheName = 'geniusPartyApp_v1.1.7';
-let filesToCache = [
+var theCacheName = 'GeniusParty - v1.0.0';
+var filesToCache = [
 	// HTML
 	'./index.html'
 ];
 
+
 self.addEventListener('install', function(e) {
 	console.log('[ServiceWorker] Install');
 	e.waitUntil(
-		caches.open(cacheName).then(function(cache) {
+		caches.open(theCacheName).then(function(cache) {
 			console.log('[ServiceWorker] Caching app shell');
 			return cache.addAll(filesToCache);
+		}).then(function(){	
+			return self.skipWaiting();
 		})
 	);
 });
 
-// self.addEventListener('activate',  event => {
- 	// event.waitUntil(self.clients.claim());
- 	// console.log('[ServiceWorker] activated');
+	addEventListener('activate', activateEvent => {
+		activateEvent.waitUntil(
+		  caches.keys().then(keyList => Promise.all(keyList.map(key => {
+			if (key !== theCacheName) {
+			  return caches.delete(key);
+			  
+		}
+			  }))).then(function(){
+				return self.clients.claim();
+			  })
+		);
+	});
 
-// });
-
-self.addEventListener('activate', activateEvent => {
-	activateEvent.waitUntil(
-	  caches.keys().then(keyList => Promise.all(keyList.map(key => {
-		if (key !== cacheName) {
-		  return caches.delete(key);
-	}
-		  })))
-	);
-});
 
 self.addEventListener('fetch', event => {
 	event.respondWith(
-		caches.match(event.request, {ignoreSearch:true}).then(response => {
-			return response || fetch(event.request);
-			console.log('[ServiceWorker] fetching');
+		// new Response('Pipe TOP'),
+		// new Response('lalala')	
+		fetch(event.request).then(function(response){
+			if(response.status == 404){
+				return new Response('Essa pagina nao existe');
+			}
+			return response;
+		}).catch(function(){
+			return new Response('Sem conexão');
+			
 		})
 	);
 });
+
