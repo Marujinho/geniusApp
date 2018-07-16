@@ -77,6 +77,12 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'views/myGifts.html',
             controller: 'myGiftsController'
         })
+        .state('resgisterCard', {
+            url: '/resgisterCard/:pId2',
+            templateUrl: 'views/registerCard.html',
+            controller: 'registerCardController'
+        })
+
 
 
 });

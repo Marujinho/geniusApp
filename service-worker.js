@@ -1,4 +1,4 @@
-var theCacheName = 'GeniusParty - v1.0.0';
+var theCacheName = 'GeniusParty - v1.0.1';
 var filesToCache = [
 	// HTML
 	'./index.html'
