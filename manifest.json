@@ -30,7 +30,8 @@
     "platform": "play"
   }],
   "orientation": "portrait",
-  "theme_color" : "#4db6ac"
+  "theme_color" : "#4db6ac",
+  "orientation": "landscape"
 	
 
 
