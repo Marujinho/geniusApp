@@ -36,7 +36,7 @@
                     <li ng-repeat="ticket in event.tickets" ng-show="ticket.type_of_sale == 'online'">
                         <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.price}}</div>
                         <div class="collapsible-body"><span ng-click="buyTicket(ticket.id)">Cartão cadastrado</span></div>
-                        <div class="collapsible-body"><span ui-sref="newCardPurchase({evtId: '{{ticket.id }}' })">Novo cartao de credito</span></div>
+                        <div class="collapsible-body"><span ui-sref="newCardPurchase({evtId: '{{ticket.id }}', pId: '{{id}}'  })">Novo cartao de credito</span></div>
                         <div class="collapsible-body"><span ui-sref="boletoPurchase">Boleto</span></div>
                     </li> 
                 </ul>

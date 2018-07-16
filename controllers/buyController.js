@@ -5,6 +5,7 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
     }
 
     $scope.name = localStorage.getItem('patronName');
+    $scope.id = localStorage.getItem('patronId');
     $scope.eventId = $stateParams.eventId; //getting fooVal
 
     $scope.ticketData = {};

@@ -19,7 +19,7 @@ geniusApp.controller('newCardPurchaseController', function($scope,$stateParams, 
         $scope.patronData.eventId = $scope.ticketId;
 
         purchaseAPI.buyTicket($scope.patronData).then(function(data, status){
-
+            
 
 
         });

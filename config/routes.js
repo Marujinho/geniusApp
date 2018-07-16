@@ -68,7 +68,7 @@ geniusApp.config(function($stateProvider, $urlRouterProvider) {
             controller: 'loginController'
         })
         .state('newCardPurchase', {
-            url: '/newCardPurchase/:evtId',
+            url: '/newCardPurchase/:evtId/:pId',
             templateUrl: 'views/newCardPurchase.html',
             controller: 'newCardPurchaseController'
         })
