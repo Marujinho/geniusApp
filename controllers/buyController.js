@@ -17,11 +17,6 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
         console.log(data);
     });
 
-    // $('.collapsible').collapsible(); 
-    // $scope.al = function(){
-    //     alert('oi');
-    // }
-
     $scope.buyTicket = function(oneParam){
         console.log(oneParam);
 
@@ -30,6 +25,13 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
 
         purchaseAPI.buyTicket($scope.ticketData).then(function(data, status){
 
+            swal({
+                position: 'center',
+                type: 'success',
+                title: 'Seu ingresso foi comprado com sucesso! Sua entrada ja está liberada',
+                showConfirmButton: false,
+                timer: 3000
+              })
             alert('Seu ingresso foi comprado com sucesso! Sua entrada ja está liberada');
             $state.go('profile');
             

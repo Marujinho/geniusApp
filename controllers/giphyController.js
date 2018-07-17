@@ -10,6 +10,6 @@ geniusApp.controller('giphyController', function($scope, $state, $compile) {
             title: 'OI',
             animation: false,
             customClass: 'animated tada'
-          });
+        });
     }
 });
