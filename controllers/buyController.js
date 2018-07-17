@@ -32,7 +32,7 @@ geniusApp.controller('buyController', function($scope,$stateParams, $state, $com
                 showConfirmButton: false,
                 timer: 3000
               })
-            alert('Seu ingresso foi comprado com sucesso! Sua entrada ja está liberada');
+           
             $state.go('profile');
             
         });
