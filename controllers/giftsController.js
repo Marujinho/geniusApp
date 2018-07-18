@@ -5,7 +5,8 @@ geniusApp.controller('giftsController', function($scope, $state, $compile) {
     }
 
     $scope.name = localStorage.getItem('patronName');
-    
+
+    //ACEITAR PRESENTE
     $scope.acceptGift = function(){
         swal({
             position: 'center',
@@ -13,9 +14,32 @@ geniusApp.controller('giftsController', function($scope, $state, $compile) {
             title: 'Ingresso aceito. Ele ja esta na sua carteira',
             showConfirmButton: false,
             timer: 3000
+          }).then(function(){
+              $('#card1').addClass('animated bounceOut');
           })
     }
 
+    //ABRIR PRESENTE
+    $scope.open = function(){
+    
+        swal({
+            title: 'PAREBÉNS! Voce ganhou um VIP!!!',
+            animation: false,
+            customClass: 'animated tada'
+        }).then(function(){
+            $('#gift1').addClass('bounceOut');
+            setTimeout(function(){ $('#gift1').hide(); }, 700);      
+        }).then(function(){
+            $('#card1').removeClass('hideIt');
+            setTimeout(function(){ $('#card1').addClass('animated tada'); }, 500);   
+            
+        })
+
+    }
+
+
+
+    //NEGAR PRESENTE
     $scope.refuseGift = function(){
 
         swal({
@@ -29,10 +53,13 @@ geniusApp.controller('giftsController', function($scope, $state, $compile) {
             cancelButtonText: 'Cancelar'
         }).then((result) => {
             if (result.value) {
-            swal(
-                'Ok',
-                'Voce discartou o presente!'  
-            )
+                swal({
+                    title: 'Ok, Voce descartou o presente',
+                }).then(function(){
+                    $('#card1').addClass('hinge data');
+                }).then(function(){
+                    setTimeout(function(){ $('#card1').hide(); }, 2000);
+                })      
             }
         })
     }
